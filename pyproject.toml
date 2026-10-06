@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "faithgap"
+version = "0.1.0"
+description = "Counterfactual faithfulness audit for LLM recommender reasoning — plug in your own model and measure the faithfulness gap."
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.9"
+authors = [{ name = "Arpita Vasant Shah" }]
+keywords = ["recommender-systems", "llm", "reasoning", "faithfulness", "evaluation", "interpretability"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+# Core is dependency-free (stdlib only). That's deliberate: the tool should drop into
+# any environment without dragging torch/transformers along.
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Paper = "https://doi.org/10.1145/3773078.3841294"
+
+[tool.setuptools.packages.find]
+where = ["src"]
